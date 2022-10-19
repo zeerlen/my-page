@@ -1,5 +1,3 @@
-#! "C:\Users\ALEN IURI\lab\my-page\Scripts\python.exe"
-
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
 from dotenv import load_dotenv

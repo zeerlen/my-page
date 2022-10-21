@@ -33,6 +33,7 @@ html, body {
     font-size: 24;
     margin: 0;
     padding: 0;
+    text-align: center;
     font-weight: 600;
     -moz-text-align-last: center;
     text-align-last: center;
@@ -40,10 +41,11 @@ html, body {
 }
 
 #header .profile .social-links a {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     background: #212431;
     color: #fff;
-    margin-right: 10px;
+    text-align: center;
+    margin: 16px;
     transition: 0.3s;
     text-decoration: none;
 }
@@ -129,16 +131,18 @@ section#home span#subtitle {
 }
 
 section#home div#slide-down {
-    margin-bottom: -12rem;
+    margin-bottom: -08rem;
 }
 
 section#home div#slide-down a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #000000;
+    font-weight: bolder;
 }
 
 section#home div#slide-down i {
-    color: rgb(0, 0, 0);
+    color: #000000;
+    font-weight: bolder;
 }
 
 i.mobile-menu {

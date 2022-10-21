@@ -5,10 +5,10 @@ import os
 
 load_dotenv()
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 SECRET_KEY = os.urandom(32)
-app.secret_key = SECRET_KEY
+application.secret_key = SECRET_KEY
 
 mail_settings = {
     "MAIL_SERVER": 'smtp.mailtrap.io',
@@ -19,35 +19,35 @@ mail_settings = {
     "MAIL_PASSWORD": os.getenv("PASSWORD")
 }
 
-app.config.update(mail_settings)
-mail = Mail(app)
+application.config.update(mail_settings)
+mail = Mail(application)
 
 class Contact:
-    def __init__(self, nome, email, message):
-        self.nome = nome
+    def __init__(self, name, email, message):
+        self.name = name
         self.email = email
         self.message = message
 
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/send', methods=['GET', 'POST'])
+@application.route('/send', methods=['GET', 'POST'])
 def send():
     if request.method == 'POST':
         contactForm = Contact(
-            request.form["nome"],
+            request.form["name"],
             request.form["email"],
             request.form["message"]
         )
 
         msg = Message(
-            subject = f'{contactForm.nome} lhe enviou uma mensagem no Portifólio!',
-            sender = app.config.get("MAIL_USERNAME"),
-            recipients= ['alen.iuri@gmail.com', app.config.get("MAIL_USERNAME")],
+            subject = f'{contactForm.name} lhe enviou uma mensagem no Portifólio!',
+            sender = application.config.get("MAIL_USERNAME"),
+            recipients= ['alen.iuri@gmail.com', application.config.get("MAIL_USERNAME")],
             body = f'''
             
-            {contactForm.nome} com e-mail <{contactForm.email}> lhe enviou a seguinte mensagem:
+            {contactForm.name} com e-mail <{contactForm.email}> lhe enviou a seguinte mensagem:
             {contactForm.message}
             '''
         )
@@ -57,4 +57,4 @@ def send():
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)

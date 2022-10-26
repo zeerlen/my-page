@@ -201,11 +201,11 @@ i.mobile-menu {
 *::-webkit-scrollbar-track {
     width: 12px;
     box-shadow: inset 0 0 .3rem #00000050;
-    background-color: #fff ;
+    background-color: #fff;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #252c90;
+    background-color: #36C5F0;
 }
 
 .section-bg{

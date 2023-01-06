@@ -40,15 +40,3 @@ animeScroll();
 window.addEventListener("scroll", ()=>{
     animeScroll();
 })
-
-const btnSubmit = document.querySelector('#btn-submit')
-const btnSubmitLoader = document.querySelector('#btn-submit-loader')
-
-btnSubmit.addEventListener("click", () => {
-    btnSubmitLoader.style.display = "block";
-    btnSubmit.style.display = "none"
-})
-
-setTimeout(() => {
-    document.querySelector('#alert').style.display = 'none';
-}, 5000)

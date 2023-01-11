@@ -29,6 +29,10 @@ html, body {
     border-radius: 50%;
 }
 
+p {
+    text-align: justify;
+}
+
 #header .profile h1 {
     font-size: 24;
     margin: 0;
